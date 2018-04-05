@@ -29,6 +29,7 @@ $aLang = array(
     'DD_SORT_ASC'                                           => 'aufsteigend',
     'DD_CLOSE_MODAL'                                        => 'schließen',
     'DD_DEMO_ADMIN_TOOL'                                    => 'Admin-Tool starten',
+    'DD_DELETE'                                             => 'Löschen',
 
     // Form-Validation
     'DD_FORM_VALIDATION_VALIDEMAIL'                         => 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
@@ -86,6 +87,7 @@ $aLang = array(
     'DD_USER_SHIPPING_LABEL_STATE'                          => 'Bundesland:',
     'DD_USER_SHIPPING_SELECT_ADDRESS'                       => 'auswählen',
     'DD_USER_SHIPPING_ADD_DELIVERY_ADDRESS'                 => 'neue Adresse hinzufügen',
+    'DD_DELETE_SHIPPING_ADDRESS'                            => 'Lieferadresse löschen',
 
     // Bestellhistorie
     'DD_ORDER_ORDERDATE'                                    => 'Datum:',
@@ -140,6 +142,18 @@ $aLang = array(
     'DD_WISHLIST_HEADING'                                   => 'Wunschzettel',
 
     'DD_ROLES_BEMAIN_UIROOTHEADER'                          => 'Menü',
+
+    'DD_DELETE_MY_ACCOUNT_WARNING'                          => 'Dieser Vorgang kann nicht rückgängig gemacht werden. Alle persönlichen Daten werden dauerhaft gelöscht.',
+    'DD_DELETE_MY_ACCOUNT'                                  => 'Konto löschen',
+    'DD_DELETE_MY_ACCOUNT_CONFIRMATION_QUESTION'            => 'Sind Sie sicher, dass Sie Ihr Konto löschen wollen?',
+    'DD_DELETE_MY_ACCOUNT_CANCEL'                           => 'Abbrechen',
+    'DD_DELETE_MY_ACCOUNT_SUCCESS'                          => 'Ihr Konto wurde gelöscht',
+    'DD_DELETE_MY_ACCOUNT_ERROR'                            => 'Das Konto konnte nicht gelöscht werden',
+
+    // Account -> My product reviews
+    'DD_DELETE_REVIEW_AND_RATING'                           => 'Bewertung und Sterne-Rating löschen',
+    'DD_REVIEWS_NOT_AVAILABLE'                              => 'Es liegen keine Bewertungen vor',
+    'DD_DELETE_REVIEW_CONFIRMATION_QUESTION'                => 'Sind Sie sicher, dass Sie die Bewertung löschen wollen?',
 );
 
 /*

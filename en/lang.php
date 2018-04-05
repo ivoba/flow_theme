@@ -29,6 +29,7 @@ $aLang = array(
     'DD_SORT_ASC'                                           => 'ascending',
     'DD_CLOSE_MODAL'                                        => 'close',
     'DD_DEMO_ADMIN_TOOL'                                    => 'Open admin interface',
+    'DD_DELETE'                                             => 'Delete',
 
     // Form validation
     'DD_FORM_VALIDATION_VALIDEMAIL'                         => 'Please enter a valid email address.',
@@ -86,6 +87,7 @@ $aLang = array(
     'DD_USER_SHIPPING_LABEL_STATE'                          => 'State:',
     'DD_USER_SHIPPING_SELECT_ADDRESS'                       => 'select',
     'DD_USER_SHIPPING_ADD_DELIVERY_ADDRESS'                 => 'add delivery address',
+    'DD_DELETE_SHIPPING_ADDRESS'                            => 'Delete shipping address',
 
     // Order history
     'DD_ORDER_ORDERDATE'                                    => 'Date:',
@@ -140,6 +142,18 @@ $aLang = array(
     'DD_WISHLIST_HEADING'                                   => 'Wishlist',
 
     'DD_ROLES_BEMAIN_UIROOTHEADER'                          => 'Menu',
+
+    'DD_DELETE_MY_ACCOUNT_WARNING'                          => 'This action cannot be undone. This will permanently delete your personal data.',
+    'DD_DELETE_MY_ACCOUNT'                                  => 'Delete account',
+    'DD_DELETE_MY_ACCOUNT_CONFIRMATION_QUESTION'            => 'Are you sure you want to delete your account?',
+    'DD_DELETE_MY_ACCOUNT_CANCEL'                           => 'Cancel',
+    'DD_DELETE_MY_ACCOUNT_SUCCESS'                          => 'The account has been deleted',
+    'DD_DELETE_MY_ACCOUNT_ERROR'                            => 'The account could not have been deleted',
+
+    // Account -> My product reviews
+    'DD_DELETE_REVIEW_AND_RATING'                           => 'Delete review and star rating',
+    'DD_REVIEWS_NOT_AVAILABLE'                              => 'No reviews available',
+    'DD_DELETE_REVIEW_CONFIRMATION_QUESTION'                => 'Are you sure you want to delete the review?',
 );
 
 /*

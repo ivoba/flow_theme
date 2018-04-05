@@ -19,20 +19,26 @@
 
             [{oxscript include="js/widgets/oxusershipingaddressselect.min.js" priority=10}]
             [{oxscript include="js/widgets/oxequalizer.min.js" priority=10}]
-            [{oxscript add="$( '.dd-add-delivery-address' ).click( function() {  $('.dd-available-addresses .dd-edit-shipping-address').remove(); $( this ).find( 'label.btn' ).button('toggle'); } );"}]
+            [{oxscript add="$( '.dd-add-delivery-address' ).click( function() {  $('.dd-available-addresses .dd-action').remove(); $( this ).find( 'label.btn' ).button('toggle'); } );"}]
             [{oxscript add="$( 'input[name=\"oxaddressid\"]' ).oxUserShipingAddressSelect();"}]
             [{oxscript add="$( window ).load( function() { if( !isMobileDevice() ) { oxEqualizer.equalHeight( $( '.dd-available-addresses .panel .panel-body' ) ); } } );"}]
             [{oxscript add="$( '.dd-edit-shipping-address' ).click(function(){ $( '#shippingAddressForm' ).show(); $( 'html, body' ).animate( { scrollTop: $( '#shippingAddressForm' ).offset().top - 80 }, 600 ); } );"}]
 
             [{block name="form_user_shipping_address_select"}]
                 <div class="row dd-available-addresses" data-toggle="buttons">
-                    [{foreach from=$aUserAddresses item=address}]
+                    [{foreach from=$aUserAddresses item=address name="shippingAdresses"}]
                         <div class="col-xs-12 col-md-6 col-lg-4">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     [{if $address->isSelected()}]
-                                        <button class="btn btn-warning btn-xs hasTooltip pull-right dd-edit-shipping-address" title="[{oxmultilang ident="CHANGE"}]">
+                                        <button class="btn btn-warning btn-xs hasTooltip pull-right dd-action dd-edit-shipping-address" title="[{oxmultilang ident="CHANGE"}]">
                                             <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-xs hasTooltip pull-right dd-action dd-delete-shipping-address"
+                                                title="[{oxmultilang ident="DD_DELETE"}]"
+                                                data-toggle="modal"
+                                                data-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]">
+                                            <i class="fa fa-trash"></i>
                                         </button>
                                     [{/if}]
                                     [{include file="widget/address/shipping_address.tpl" delivadr=$address}]

@@ -19,17 +19,18 @@
     [{oxscript add="oxVariantSelections  = [`$_sSelectionHashCollection`];"}]
 
     <form class="js-oxWidgetReload" action="[{$oView->getWidgetLink()}]" method="get">
-        <div>
-            [{$oViewConf->getHiddenSid()}]
-            [{$oViewConf->getNavFormParams()}]
-            <input type="hidden" name="cl" value="[{$oView->getClassName()}]">
-            <input type="hidden" name="oxwparent" value="[{$oViewConf->getTopActiveClassName()}]">
-            <input type="hidden" name="listtype" value="[{$oView->getListType()}]">
-            <input type="hidden" name="nocookie" value="1">
-            <input type="hidden" name="cnid" value="[{$oView->getCategoryId()}]">
-            <input type="hidden" name="anid" value="[{if !$oDetailsProduct->oxarticles__oxparentid->value}][{$oDetailsProduct->oxarticles__oxid->value}][{else}][{$oDetailsProduct->oxarticles__oxparentid->value}][{/if}]">
-            <input type="hidden" name="actcontrol" value="[{$oViewConf->getTopActiveClassName()}]">
-        </div>
+        [{$oViewConf->getHiddenSid()}]
+        [{$oViewConf->getNavFormParams()}]
+        <input type="hidden" name="cl" value="[{$oView->getClassName()}]">
+        <input type="hidden" name="oxwparent" value="[{$oViewConf->getTopActiveClassName()}]">
+        <input type="hidden" name="listtype" value="[{$oView->getListType()}]">
+        <input type="hidden" name="nocookie" value="1">
+        <input type="hidden" name="cnid" value="[{$oView->getCategoryId()}]">
+        <input type="hidden" name="anid" value="[{if !$oDetailsProduct->oxarticles__oxparentid->value}][{$oDetailsProduct->oxarticles__oxid->value}][{else}][{$oDetailsProduct->oxarticles__oxparentid->value}][{/if}]">
+        <input type="hidden" name="actcontrol" value="[{$oViewConf->getTopActiveClassName()}]">
+        [{if $oConfig->getRequestParameter('preview')}]
+            <input type="hidden" name="preview" value="[{$oConfig->getRequestParameter('preview')}]">
+        [{/if}]
     </form>
 [{/if}]
 
@@ -341,7 +342,9 @@
                             [{/if}]
                         </li>
                         <li>
-                            <a id="suggest" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=suggest" params="anid=`$oDetailsProduct->oxarticles__oxnid->value`"|cat:$oViewConf->getNavUrlParams()}]">[{oxmultilang ident="RECOMMEND"}]</a>
+                            [{if $oViewConf->getShowSuggest()}]
+                                <a id="suggest" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=suggest" params="anid=`$oDetailsProduct->oxarticles__oxnid->value`"|cat:$oViewConf->getNavUrlParams()}]">[{oxmultilang ident="RECOMMEND"}]</a>
+                            [{/if}]
                         </li>
                         <li>
                             [{if $oViewConf->getShowListmania()}]
